@@ -1,32 +1,25 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serhat Yıldız - Web Projesi</title>
+<?php include 'php/header.php'; ?>
+
+<section id="hakkinda" class="row align-items-center">
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <div class="col-md-8">
+        <h1 class="display-4 fw-bold">Merhaba, Ben Serhat! </h1>
+        <p class="lead">Sakarya Üniversitesi'nde eğitim görüyor ve Siber Güvenlik, Yapay Zeka (LLM & RAG) sistemleri üzerinde çalışıyorum.</p>
+        <p>Aynı zamanda Arch tabanlı Garuda Linux ve KDE Plasma kullanarak sistem mimarileri üzerinde denemeler yapıyor, C# ve Java ile full-stack projeler geliştiriyorum.</p>
+        
+        <h4>Hobilerim & İlgi Alanlarım</h4>
+        <ul>
+            <li>Red Teaming ve CTF (Capture The Flag) Çözümleri</li>
+            <li>Kick Boxing ,Yüzme ,Fitness</li>
+            <li>Rekabetçi FPS ve Hikaye tabanlı oyunlar</li>
+            <li>Finansal piyasalar ve borsa analizi</li>
+        </ul>
+    </div>
 
-    <header>
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-            <div class="container">
-                <a class="navbar-brand" href="index.php">Serhat Yıldız</a>
-            </div>
-        </nav>
-    </header>
+    <div class="col-md-4 text-center">
+        <img src="https://via.placeholder.com/300" alt="Serhat Yıldız" class="img-fluid rounded-circle shadow-lg">
+    </div>
 
-    <main class="container mt-5">
-        <section id="hakkinda">
-            <h1>Merhaba, Ben Serhat!</h1>
-            <p>Bu proje Web Teknolojileri dersi kapsamında hazırlanmaktadır.</p>
-        </section>
-    </main>
+</section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
-</body>
-</html>
+<?php include 'php/footer.php'; ?>
