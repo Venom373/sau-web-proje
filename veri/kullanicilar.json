@@ -1,6 +1,7 @@
 [
-    {
-        "ogrenci_no": "B251210381",
-        "sifre": "$2y$12$oVFQFvhOehAJ07P8YyI3jOkVNARLzmDF0epAwcH12Viyd0KFiPIPm"
-    }
+  {
+    "email": "b251210381@sakarya.edu.tr",
+    "sifre": "b251210381",
+    "ogrenci_no": "B251210381"
+  }
 ]
