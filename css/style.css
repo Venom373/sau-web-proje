@@ -1,0 +1,374 @@
+/* Korsan ve Denizci Fontları */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:wght@700;900&display=swap");
+
+/* =========================================================
+   1. GENEL ARKA PLAN VE TEMEL İSKELET (Karanlık Okyanus)
+   ========================================================= */
+body {
+  font-family: "Montserrat", sans-serif;
+  background:
+    linear-gradient(rgba(10, 15, 25, 0.85), rgba(10, 15, 25, 0.95)),
+    url("https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1948&auto=format&fit=crop")
+      no-repeat center center fixed;
+  background-size: cover;
+  color: #e2e8f0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand {
+  font-family: "Playfair Display", serif;
+}
+
+/* 2. ESKİ KAĞIT / HAZİNE HARİTASI KUTUSU */
+main.container {
+  background-color: #e3d3b4; /* Saman/Parşömen kağıdı rengi */
+  background-image: url("https://www.transparenttextures.com/patterns/aged-paper.png");
+  border: 6px solid #4a3018; /* Ahşap çerçeve */
+  border-radius: 4px; /* Sert, eski tip köşeler */
+  box-shadow: 15px 15px 35px rgba(0, 0, 0, 0.8);
+  padding: 40px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  color: #3e2723; /* Mürekkep siyahı/kahvesi */
+}
+
+/* Üstteki boş beyaz kutu sorununu kökünden yok eden kod */
+main.container:empty,
+.container:empty {
+  display: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+/* API Sayfası (Grand Line Karakterleri) kendi tasarımında kalsın diye istisna */
+main.container:has(.op-kapsayici) {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* 3. NAVBAR VE FOOTER (Gemi Ahşabı ve Kaptan Kamarası) */
+.navbar {
+  background: rgba(30, 20, 15, 0.98) !important;
+  border-bottom: 3px solid #dc2626; /* Korsan Kırmızısı */
+}
+.navbar-brand {
+  color: #f8f9fa !important;
+  letter-spacing: 2px;
+}
+.nav-link {
+  color: #d1d5db !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #dc2626 !important;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #dc2626 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.5);
+}
+
+footer {
+  background: rgba(15, 10, 8, 0.98) !important;
+  border-top: 2px solid #4a3018;
+  color: #9ca3af;
+}
+
+/* =========================================================
+   ORTAK YARDIMCI SINIFLAR (Ayraçlar ve Gölgeler)
+   ========================================================= */
+.korsan-ayrac,
+.index-ayrac {
+  border-top: 2px dashed #4a3018;
+}
+.index-ayrac {
+  opacity: 0.5;
+}
+.text-shadow-korsan {
+  text-shadow: 2px 2px 4px #000;
+}
+.yukleniyor-spinner {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* =========================================================
+   INDEX.PHP (Hakkında Sayfası Stilleri)
+   ========================================================= */
+.index-baslik,
+.iletisim-kutu-baslik {
+  color: #291a10;
+}
+.index-metin {
+  line-height: 1.8;
+  color: #4a3018;
+}
+.index-vurgu,
+.hobi-ikon {
+  color: #dc2626;
+}
+.hobiler-baslik {
+  color: #dc2626;
+  border-bottom: 2px dashed #4a3018;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+.hobiler-liste {
+  color: #3e2723;
+}
+.iletisim-kutu {
+  background: rgba(74, 48, 24, 0.05);
+  border: 2px dashed #4a3018;
+  border-radius: 10px;
+  display: inline-block;
+}
+.iletisim-kutu-link {
+  color: #dc2626;
+  transition: 0.3s;
+}
+.iletisim-kutu-link:hover {
+  color: #b91c1c;
+  text-decoration: underline !important;
+}
+.profil-resmi {
+  border-radius: 15px;
+  border: 3px dashed #4a3018;
+  max-height: 380px;
+  object-fit: cover;
+}
+.video-baslik {
+  color: #4a3018;
+}
+.video-kapsayici {
+  max-width: 900px;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 3px solid #4a3018;
+}
+
+/* =========================================================
+   ILETISIM.PHP (Form Sayfası Stilleri)
+   ========================================================= */
+.kaptan-baslik {
+  color: #291a10;
+  font-family: "Playfair Display", serif;
+}
+.iletisim-header {
+  border-bottom: 2px dashed #4a3018;
+}
+.iletisim-aciklama,
+.radio-etiket {
+  color: #4a3018;
+}
+.vue-hata-paneli {
+  background-color: #fca5a5;
+  color: #7f1d1d;
+  border: 2px solid #b91c1c;
+}
+.form-etiket {
+  color: #3e2723;
+}
+.form-uyari {
+  color: #dc2626;
+  font-weight: 600;
+}
+.form-tercih-kutusu {
+  background: rgba(74, 48, 24, 0.1);
+  border: 1px dashed #4a3018;
+}
+.kvkk-etiket {
+  color: #78350f;
+}
+
+/* =========================================================
+   ISLEMLER.PHP (Seyir Defteri Kayıt Stilleri)
+   ========================================================= */
+.islemler-header {
+  border-bottom: 2px dashed #4a3018;
+}
+.islemler-baslik {
+  color: #291a10;
+  font-family: "Playfair Display", serif;
+}
+.kayit-kutusu {
+  background: rgba(74, 48, 24, 0.05);
+  border: 2px solid #4a3018;
+  border-radius: 8px;
+}
+.basari-mesaji {
+  background-color: #dcfce7;
+  color: #14532d;
+  border: 2px solid #166534;
+}
+.hata-mesaji {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 2px solid #b91c1c;
+}
+.sonuc-tablosu {
+  color: #3e2723;
+}
+.tablo-satir {
+  border-bottom: 1px dashed #4a3018;
+}
+.tablo-baslik {
+  color: #dc2626;
+}
+.tablo-etiket-genislik {
+  width: 35%;
+}
+
+/* =========================================================
+   PANEL.PHP (Giriş Sonrası Karşılama Stilleri)
+   ========================================================= */
+.panel-kutu {
+  max-width: 600px;
+  width: 100%;
+}
+.panel-ikon-kapsayici {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #291a10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+  border: 4px solid #eab308;
+  box-shadow: 0 0 25px rgba(234, 179, 8, 0.5);
+}
+.panel-ikon {
+  font-size: 45px;
+  line-height: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* =========================================================
+   SEHIR.PHP (Slider ve Tanıtım Stilleri)
+   ========================================================= */
+.slider-kapsayici {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.slider-gorsel {
+  cursor: pointer;
+  object-fit: cover;
+  height: 500px;
+}
+.slider-yazi-arkaplan {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+/* =========================================================
+   API.PHP (Ödül Posterleri ve Kripto Kartları Stilleri)
+   ========================================================= */
+.op-kapsayici {
+  background:
+    linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)),
+    url("https://images.unsplash.com/photo-1505159940484-eb2b9f2588e2?q=80&w=2070&auto=format&fit=crop")
+      no-repeat center center;
+  background-size: cover;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+  border: 1px solid #334155;
+  padding: 40px 20px;
+}
+
+.neon-card {
+  background-color: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid #475569;
+  border-radius: 15px;
+  color: white;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.neon-card:hover {
+  transform: translateY(-10px);
+  border-color: #38bdf8;
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+}
+
+.wanted-poster {
+  background-color: #e3d3b4;
+  background-image: url("https://www.transparenttextures.com/patterns/aged-paper.png");
+  border: 8px solid #4a3018;
+  padding: 15px;
+  color: #4a3018;
+  font-family: "Georgia", serif;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease;
+}
+
+.wanted-poster:hover {
+  transform: scale(1.02);
+}
+
+.wanted-header {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+  border-bottom: 4px solid #4a3018;
+  line-height: 1;
+}
+
+.wanted-alt-baslik {
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+}
+
+.wanted-img-container {
+  border: 4px solid #4a3018;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  margin-bottom: 15px;
+  background-color: #000;
+}
+
+.wanted-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  filter: sepia(0.5) contrast(1.2) brightness(0.95);
+}
+
+.wanted-name {
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.wanted-bounty {
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+.bounty-sembol {
+  font-size: 1rem;
+}

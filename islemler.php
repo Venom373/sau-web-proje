@@ -4,53 +4,57 @@
     <div class="row justify-content-center p-md-3">
         <div class="col-lg-8">
 
-            <header class="text-center mb-5 pb-3" style="border-bottom: 2px dashed #4a3018;">
-                <h1 class="display-4 fw-bold" style="color: #291a10; font-family: 'Playfair Display', serif;">Seyir
-                    Defteri Kaydı 📜</h1>
+            <header class="text-center mb-5 pb-3 islemler-header">
+                <h1 class="display-4 fw-bold islemler-baslik">Seyir Defteri Kaydı 📜</h1>
             </header>
 
-            <div class="p-4 p-md-5"
-                style="background: rgba(74, 48, 24, 0.05); border: 2px solid #4a3018; border-radius: 8px;">
+            <div class="p-4 p-md-5 kayit-kutusu">
 
                 <?php
-                // Güvenlik kontrolü
+                // Güvenlik kontrolü: Verilerin POST metoduyla gelip gelmediğine bakıyoruz
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     
-                    // Zafiyetleri önlemek için verileri temizliyoruz
+                    // XSS ve gereksiz boşluklar için verileri temizliyoruz
                     $ad = htmlspecialchars(trim($_POST['ad'] ?? 'Belirtilmedi'));
                     $soyad = htmlspecialchars(trim($_POST['soyad'] ?? 'Belirtilmedi'));
                     $email = htmlspecialchars(trim($_POST['email'] ?? 'Belirtilmedi'));
+                    $telefon = htmlspecialchars(trim($_POST['telefon'] ?? 'Belirtilmedi')); 
                     $konu = htmlspecialchars(trim($_POST['konu'] ?? 'Belirtilmedi'));
                     $tercih = htmlspecialchars(trim($_POST['tercih'] ?? 'Belirtilmedi'));
                     $mesaj = htmlspecialchars(trim($_POST['mesaj'] ?? 'Belirtilmedi'));
 
-                    echo "<div class='alert fw-bold shadow-sm mb-5' style='background-color: #dcfce7; color: #14532d; border: 2px solid #166534;'>
-                            <h4 class='alert-heading'>Güvercin Ulaştı, $ad! </h4>
-                            <p class='mb-0'>Mesajınız siber denizlerde kaybolmadan sunucumuza güvenle ulaştı. Detaylar aşağıdadır:</p>
+                    // Başarı mesajı
+                    echo "<div class='alert fw-bold shadow-sm mb-5 basari-mesaji'>
+                            <h4 class='alert-heading'>Mesaj Kaptan'a Ulaştı, $ad! ⚓</h4>
+                            <p class='mb-0'>İletiniz siber denizleri aşarak sunucumuza güvenle ulaştı. Detaylar aşağıdadır:</p>
                           </div>";
 
-                    // Gelen verileri Seyir Defteri temalı tablo ile ekrana basıyoruz
+                    // Gelen verileri temaya uygun bir tablo ile listeliyoruz
                     echo "<div class='table-responsive'>
-                            <table class='table table-borderless fs-5' style='color: #3e2723;'>
+                            <table class='table table-borderless fs-5 sonuc-tablosu'>
                                 <tbody>
-                                    <tr style='border-bottom: 1px dashed #4a3018;'>
-                                        <th style='width: 35%; color: #dc2626;'>Ad Soyad:</th>
+                                    <tr class='tablo-satir'>
+                                        <th class='tablo-baslik tablo-etiket-genislik'>Ad Soyad:</th>
                                         <td class='fw-semibold'>$ad $soyad</td>
                                     </tr>
-                                    <tr style='border-bottom: 1px dashed #4a3018;'>
-                                        <th style='color: #dc2626;'>E-Posta:</th>
+                                    <tr class='tablo-satir'>
+                                        <th class='tablo-baslik'>E-Posta:</th>
                                         <td class='fw-semibold'>$email</td>
                                     </tr>
-                                    <tr style='border-bottom: 1px dashed #4a3018;'>
-                                        <th style='color: #dc2626;'>Konu:</th>
+                                    <tr class='tablo-satir'>
+                                        <th class='tablo-baslik'>Telefon:</th>
+                                        <td class='fw-semibold'>$telefon</td>
+                                    </tr>
+                                    <tr class='tablo-satir'>
+                                        <th class='tablo-baslik'>Konu:</th>
                                         <td class='fw-semibold'>$konu</td>
                                     </tr>
-                                    <tr style='border-bottom: 1px dashed #4a3018;'>
-                                        <th style='color: #dc2626;'>Dönüş Tercihi:</th>
+                                    <tr class='tablo-satir'>
+                                        <th class='tablo-baslik'>Dönüş Tercihi:</th>
                                         <td class='fw-semibold'>$tercih</td>
                                     </tr>
                                     <tr>
-                                        <th style='color: #dc2626;'>Mesajınız:</th>
+                                        <th class='tablo-baslik'>Mesajınız:</th>
                                         <td><p class='mb-0 text-break fw-semibold'>$mesaj</p></td>
                                     </tr>
                                 </tbody>
@@ -58,8 +62,8 @@
                           </div>";
 
                 } else {
-                    // URL'den direkt girme engeli
-                    echo "<div class='alert fw-bold text-center' style='background-color: #fee2e2; color: #991b1b; border: 2px solid #b91c1c;'>
+                    // Sayfaya direkt linkle girmeye çalışanlar için engel
+                    echo "<div class='alert fw-bold text-center hata-mesaji'>
                             <h4 class='alert-heading fw-bold'>Yetkisiz Erişim! ☠️</h4>
                             <p>Bu sayfaya doğrudan erişim izniniz bulunmamaktadır. Lütfen iletişim formunu kullanınız.</p>
                           </div>";
